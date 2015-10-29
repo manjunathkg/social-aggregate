@@ -60,13 +60,13 @@ var getFacebookSource = function(sources, callback){
 };
 
 var getTwitterSource = function(sources, callback){ 
-  if (sources.twitter && sources.twitter.consumerKey && sources.twitter.consumerSecret && sources.twitter.accessToken && sources.twitter.accessTokenSecret && sources.twitter.paths.length >0) {
+  if (sources.twitter && sources.twitter.consumerKey && sources.twitter.consumerSecret && sources.twitter.accessToken && sources.twitter.accessTokenSecret && sources.twitter.users.length >0) {
     var T = new Twit({consumer_key: sources.twitter.consumerKey,
                       consumer_secret: sources.twitter.consumerSecret,
                       access_token: sources.twitter.accessToken,
                       access_token_secret: sources.twitter.accessTokenSecret});
-    var path = sources.twitter.paths.shift();
-    T.get(path,function(err, data, response){
+    var user = sources.twitter.users.shift();
+    T.get('statuses/user_timeline',{screen_name:user}, function(err, data, response){
       for (var i=0; i<data.length; i++) {
         var item = data[i];
         if (!item.in_reply_to_status_id && !item.possibly_sensitive) {
