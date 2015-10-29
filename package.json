@@ -1,0 +1,32 @@
+{
+  "name": "social-aggregate",
+  "version": "0.0.0",
+  "description": "A library providing methods to aggregate multiple social feeds into one",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uvalib/social-aggregate.git"
+  },
+  "keywords": [
+    "rss",
+    "social",
+    "facebook",
+    "twitter",
+    "json"
+  ],
+  "author": "Doug Chestnut <dougchestnut@gmail.com>",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/uvalib/social-aggregate/issues"
+  },
+  "homepage": "https://github.com/uvalib/social-aggregate",
+  "dependencies": {
+    "fbgraph": "^1.1.0",
+    "moment": "^2.10.6",
+    "rss": "^1.2.0",
+    "twit": "^2.1.1"
+  }
+}
