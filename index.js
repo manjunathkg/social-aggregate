@@ -45,7 +45,10 @@ var getFacebookSource = function(sources, callback){
             date:moment(item.created_time),
 //            lat:0,
 //            long:0,
-            custom_elements:[],
+            custom_elements:[
+              {'source':[{_attr:{url: ""}},
+                         "facebook"]}
+            ],
             enclosure:(item.picture)?
                         {url:item.picture}:
                         {}
@@ -79,7 +82,10 @@ var getTwitterSource = function(sources, callback){
               date:moment(item.created_at,"ddd MMM DD HH:mm:ss Z"),
 //            lat:0,
 //            long:0,
-              custom_elements:[],
+              custom_elements:[
+              {'source':[{_attr:{url: ""}},
+                         "twitter"]}
+              ],
               enclosure:{}
           });
         }
