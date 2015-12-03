@@ -76,7 +76,7 @@ var getTwitterSource = function(sources, callback){
           items.push({
               title:item.user.screen_name+" tweeted",
               description: item.text.parseURL().parseUsername().parseHashtag() ,
-              url:"https://twitter.com/UVaLibrary/status/"+item.id_str,
+              url:"https://twitter.com/"+item.user.screen_name+"/status/"+item.id_str,
               categories:item.entities.hashtags,
               author:"http://twiter.com/"+item.user.screen_name,
               date:moment(item.created_at,"ddd MMM DD HH:mm:ss Z"),
