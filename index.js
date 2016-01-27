@@ -26,6 +26,7 @@ var getFacebookSource = function(sources, callback){
     graph.setAccessToken(sources.facebook.accessToken);
     var path = sources.facebook.paths.shift();
     graph.get(path,function(err,res){
+      if (res.data && res.data.length) {
       for (var i=0; i<res.data.length; i++) {
         var item = res.data[i];
         if (!item.is_hidden && !item.is_expired) {
@@ -42,7 +43,7 @@ var getFacebookSource = function(sources, callback){
             url:(item.link)? item.link: null,
             categories:['facebook',item.type],
             author:"https://www.facebook.com/"+item.from.id+"/",
-            date:moment(item.created_time),
+            date:moment(item.created_time,"YYYY-MM-DDTHH:mm:ssZZ"),
 //            lat:0,
 //            long:0,
             custom_elements:[
@@ -54,6 +55,7 @@ var getFacebookSource = function(sources, callback){
                         {}
           });
         }
+      }
       }
       getFacebookSource(sources, callback);
     });
