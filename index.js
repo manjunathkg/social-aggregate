@@ -81,7 +81,7 @@ var getTwitterSource = function(sources, callback){
               url:"https://twitter.com/"+item.user.screen_name+"/status/"+item.id_str,
               categories:item.entities.hashtags,
               author:"http://twiter.com/"+item.user.screen_name,
-              date:moment(item.created_at,"ddd MMM DD HH:mm:ss Z"),
+              date:moment(item.created_at,"ddd MMM DD HH:mm:ss Z YYYY"),
 //            lat:0,
 //            long:0,
               custom_elements:[
