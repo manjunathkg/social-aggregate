@@ -15,6 +15,8 @@ var graph = require('fbgraph'),
     RSS = require('rss'),
     moment = require('moment');
 
+graph.setVersion("2.3");
+
 var feed = new RSS({
   title: "Aggregated Library Social Feed",
   pubDate: Date.now()
